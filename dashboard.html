@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hospital Dashboard - HMS</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="dashboard">
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <button id="toggleSidebar"><i class="fas fa-bars"></i></button>
+
+      <h2>🏥 HMS</h2>
+
+      <ul>
+        <li><a href="#" onclick="showModule('dashboard')"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+        <li><a href="#" onclick="showModule('doctors')"><i class="fas fa-user-doctor"></i> <span>Doctors</span></a></li>
+        <li><a href="#" onclick="showModule('patients')"><i class="fas fa-bed"></i> <span>Patients</span></a></li>
+        <li><a href="#" onclick="showModule('appointments')"><i class="fas fa-calendar-check"></i> <span>Appointments</span></a></li>
+        <li><a href="#" onclick="showModule('billing')"><i class="fas fa-file-invoice-dollar"></i> <span>Billing</span></a></li>
+
+        <!-- NEW REPORT BUTTON -->
+        <li><a href="#" onclick="showModule('reports')"><i class="fas fa-file-download"></i> <span>Reports</span></a></li>
+
+        <li><a href="#" onclick="logoutAdmin()"><i class="fas fa-right-from-bracket"></i> <span>Logout</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+      <!-- Header -->
+      <div class="top-header">
+        <h1>Hospital Management Dashboard</h1>
+
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchInput" placeholder="Search doctors / patients / bills..." />
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div id="content"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast"></div>
+
+  <!-- Confirm Delete Modal -->
+  <div id="confirmModal">
+    <div class="modal-box">
+      <h3>Are you sure you want to delete?</h3>
+      <button>Yes</button>
+      <button>No</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
